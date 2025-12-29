@@ -1,0 +1,52 @@
+query GetPosts {
+  posts {
+    id
+    title
+    body
+    author {
+      id
+      name
+      avatarUrl
+    }
+    tags
+    publishedAt
+  }
+}
+
+query GetPost($id: ID!) {
+  post(id: $id) {
+    id
+    title
+    body
+    author {
+      id
+      name
+      avatarUrl
+    }
+    tags
+    publishedAt
+  }
+}
+
+query GetUser($id: ID!) {
+  user(id: $id) {
+    id
+    name
+    avatarUrl
+  }
+}
+
+mutation CreatePost($input: CreatePostInput!) {
+  createPost(input: $input) {
+    id
+    title
+    body
+    author {
+      id
+      name
+      avatarUrl
+    }
+    tags
+    publishedAt
+  }
+}
